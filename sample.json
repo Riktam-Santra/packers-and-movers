@@ -1,0 +1,29 @@
+{
+  "info": {
+    "name": "Riktam Santra",
+    "address": "addr",
+    "role": "customer"
+  },
+  "deliveries": [
+    {
+      "created_at": "00.00.00T00:00:00.343",
+      "departed_at": "00.00.00T00:00:00.343",
+      "starting_from": {
+        "address": "addr",
+        "location": {
+          "lat": 1234,
+          "lon": 5678
+        }
+      },
+      "checkpoints": [
+        {
+          "address": "addr",
+          "location": {
+            "lat": 1234,
+            "lon": 5678
+          }
+        }
+      ]
+    }
+  ]
+}
