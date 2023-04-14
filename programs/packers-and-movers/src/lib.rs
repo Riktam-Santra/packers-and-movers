@@ -4,9 +4,6 @@ declare_id!("GDazepq9rJxEZmi3DR3k1ZcmAwUvQm5dmcf6atWPFumq");
 
 #[program]
 pub mod packers_and_movers {
-
-    use std::vec;
-
     use anchor_lang::solana_program::entrypoint::ProgramResult;
 
     use super::*;
