@@ -17,11 +17,6 @@ const userSchema = new mongoose.Schema({
         required : true , 
         unique : true 
     },
-    secretKey : {
-        type : String , 
-        required : true , 
-        unique : true 
-    },
     password : {
         type : String , 
         required : true 
@@ -37,7 +32,15 @@ const userSchema = new mongoose.Schema({
     },
     address : {
         type : String 
-    } 
+    } ,
+    city : {
+        type : String ,
+        required : true 
+    } , 
+    delivery : [{
+        type : mongoose.Schema.Types.ObjectId , 
+        ref : 'Delivery'
+    }]
     
 
 } , {timestamps:true} );
@@ -55,7 +58,7 @@ const userSchema = new mongoose.Schema({
 // }
 
 userSchema.methods.genJWT = function generate(){
-    return Jwt.sign({id : this._id , email : this.email }, 'secret' , {
+    return Jwt.sign({id : this._id , email : this.email , publicKey : this.publicKey }, 'secret' , {
         expiresIn : '1h'
     })
 }
